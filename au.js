@@ -156,7 +156,7 @@ class Client {
 
     loadGUI() {
 		
-        $('.modes-container').replaceWith(`
+        $('.agario-promo').replaceWith(`
         <input onchange="localStorage.setItem('botNick', this.value);" id="" maxlength="15" class="form-control" placeholder="Bot Name" value="Bots Name"></input>
 		<input onchange="localStorage.setItem('botNick', this.value);" id="botNick" maxlength="15" class="form-control" placeholder="Bot Name" value="Kapper"></input>
         <input onchange="localStorage.setItem('botAmount', this.value);" id="BotAmount" maxlength="3" class="form-control" placeholder="Bot Amount" value="200"></input>
