@@ -1,4 +1,3 @@
-
 function editCore(core) {
     core = core.replace(/;if\((\w)<1\.0\){/i, ';if($1<0){');
     core = core.replace(/([\w]+\s*=\s*[\w]+\s*\+\s*16\s*\|\s*0;\s*([\w=]+)\s*=\s*\+[\w\[\s*><\]]+;)/, '$1 $2*=0.75;');
@@ -13,7 +12,6 @@ function editCore(core) {
     console.log('core_edited');
     return core;
 }
-
 
 window.draw = () => {
     if (!window.minX || !window.minY || !window.maxY || !window.maxY) return;
@@ -155,15 +153,11 @@ class Client {
     }
 
     loadGUI() {
-		
-        $('.agario-promo').replaceWith(`
-        <input onchange="localStorage.setItem('botNick', this.value);" id="" maxlength="15" class="form-control" placeholder="Bot Name" value="Bots Name"></input>
-		<input onchange="localStorage.setItem('botNick', this.value);" id="botNick" maxlength="15" class="form-control" placeholder="Bot Name" value="Kapper"></input>
-        <input onchange="localStorage.setItem('botAmount', this.value);" id="BotAmount" maxlength="3" class="form-control" placeholder="Bot Amount" value="200"></input>
-        <center><button id="toggleButton" onclick="window.client.startBots(localStorage.getItem('botAmount'));" class="btn btn-success">Start Bots</button></center>
+        $('.agario-promo-container').replaceWith(`
+        <center><button id="toggleButton" class="btn btn-danger">Your plan has expired</button></center>
         `);
-        if (!localStorage.getItem('botAmount')) localStorage.setItem('botAmount', 200);
-        if (!localStorage.getItem('botNick')) localStorage.setItem('botNick', 'Kapper');
+        if (!localStorage.getItem('botAmount')) localStorage.setItem('botAmount', 10);
+        if (!localStorage.getItem('botNick')) localStorage.setItem('botNick', 'Sanik');
         console.log('[AgarUnlimited] Ready!');
     }
 
@@ -562,3 +556,4 @@ class Bot {
         return e;
     }
 }
+
